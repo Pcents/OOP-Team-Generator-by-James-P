@@ -52,10 +52,13 @@ const questions = [
     }
 ];
 
+
 // function writeToFile(filename, data) {
 
 //     fs.writeFile(filename, data, (error) => { if (error) throw error; console.log("success!") });
 // }
+
+// for loop for the returned data. how to combine data from manage, engineer, intern all in one loop?
 
 function runIt() {
     return inquirer.prompt(questions)
@@ -64,6 +67,7 @@ function runIt() {
             // we call genMark and are passing the answers-and the function that contains the 
             // const markDown = genMark(data)
             // writeToFile("./dis/readme.md", markDown)
+        
             return data
         })
         .catch((error) => {
