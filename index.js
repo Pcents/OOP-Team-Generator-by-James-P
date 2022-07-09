@@ -1,28 +1,23 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('./lib/Manager')
+const Engineer = require('./lib/Engineer')
+const Inter = require('./lib/Intern')
 console.log("we out here")
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for my team members and their information
 // THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-const questions = [
+const promptManager  = () =>{
+return inquirer.prompt(
+ [
     // list input for type of job-have something that changes the last questions based on it?
-    {
-        type: 'list',
-        name: 'job',
-        message: 'What is your position?',
-        choices: ['Manager', 'Engineer', 'Intern'],
-        // when?:
-        // .then(function(answers))
-
-    },
-
+    
     // when inquirer statement-run specific question-extra question at the end
     {
         type: 'input',
-        name: 'names',
-        message: 'What is name?',
+        name: 'name',
+        message: 'What is your name?',
     },
     {
         type: 'input',
@@ -36,22 +31,52 @@ const questions = [
     },
     //more info-maybe and if-then for manager/engineer/intern? when statement-built into the question object
     {
-        type: 'input',
-        name: 'engineer',
-        message: 'What if your Github account?',
     },
     {
         type: 'input',
-        name: 'intern',
-        message: 'What school are you attending?',
-    },
-    {
-        type: 'input',
-        name: 'manager',
+        name: 'officeNumber',
         message: 'What is your office number?',
     }
-];
-
+    ]
+)
+.then(answers =>{
+console.log (answers);
+const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+assembleTeam.push(manager);
+anothaOne();
+})
+};
+const anothaOne = () =>{
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'job',
+            message: 'Would you like to add another employee or assemble your team?',
+            choices: ['Engineer', 'Intern', 'Ready to assemble!' ]        
+        }
+    ])
+    .then(choice =>{
+switch (choice.job){
+    case "add an engineer":
+    promptEngineer();
+    break;
+    case "add an intern":
+    promptIntern();
+    break;
+    default:
+    assembleTeam();
+}
+    })
+}
+//     type: 'input',
+//     name: 'engineer',
+//     message: 'What if your Github account?',
+// },
+// {
+    //     type: 'input',
+    //     name: 'intern',
+    //     message: 'What school are you attending?',
+    
 
 // function writeToFile(filename, data) {
 
@@ -60,21 +85,8 @@ const questions = [
 
 // for loop for the returned data. how to combine data from manage, engineer, intern all in one loop?
 
-function runIt() {
-    return inquirer.prompt(questions)
-        .then((data) => {
-            console.log(data)
-            // we call genMark and are passing the answers-and the function that contains the 
-            // const markDown = genMark(data)
-            // writeToFile("./dis/readme.md", markDown)
-        
-            return data
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-}
-runIt();
+
+
 // second function to add another employee or build the team-either calls function or hand off info (write to file)
 
 // WHEN I click on an email address in the HTML
