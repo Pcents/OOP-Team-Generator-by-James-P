@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// dunnon why these aint working
+const Manager = require('./lib/Manager')
 console.log("we out here")
 
 // GIVEN a command-line application that accepts user input
