@@ -130,6 +130,8 @@ const promptEngineer  = () =>{
         anothaOne();
         })
         };
+
+// how will i send this out to cards.js?
 const teamAssembly = () => {
     console.log("DEV TEAM, ASSEEEEBLE!")
     fs.writeFileSync(outputPath, teamCards(assembleTeam))
