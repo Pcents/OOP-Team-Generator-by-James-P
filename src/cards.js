@@ -1,6 +1,9 @@
 // require something?
 // how do i append?
-
+const maCards = document.querySelector('manager')
+const enCards = document.querySelector('engineer')
+const inCards = document.querySelector('intern')
+const arrayImp = require('./index.js')
 // have to link the email
 const manCards = manager => {
 return `<div class="card" style="width: 18rem;">
@@ -16,7 +19,12 @@ return `<div class="card" style="width: 18rem;">
 
 </div>
 </div>`
+}
+function appCards (){
 
+for (i = 0; i < assembleTeam.length; i++){
+  // append stuff here
+}
 }
 // have to link href on card for github
 const engCards = engineer => {
