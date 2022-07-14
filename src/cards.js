@@ -1,7 +1,4 @@
-// require something?
-// how do i append?
-// a function that includes all these variable
-
+// variebels that contain my template and a place for my template literals
 // have to link the email
 const manCards = (answers) => {
 return `<div class="card" style="width: 18rem;">
@@ -51,7 +48,8 @@ return `<div class="card" style="width: 18rem;">
         </div>`
         
         }
-// else if 
+
+// this function will create the cards above and put them into my big template
 function teamCards(employees){
   console.log(employees)
   // loop through array and create a card for each employee
@@ -83,16 +81,12 @@ return `
 </head>
 <body>
     <header>The Squad</header>
-
 ${loopedCards}
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
     </body>
-    </html>
-    `
+    </html>  `
   };
   module.exports = teamCards;
-  // <script src="../src/cards.js"></script>

@@ -8,7 +8,7 @@ const path = require('path')
 const assembleTeam = [];
 const outputPath = './dist/index.html'
 console.log("we out here")
-
+// my first question that will gather manager information
 const promptManager  = () =>{
 return inquirer.prompt(
  [
@@ -97,7 +97,6 @@ const promptEngineer  = () =>{
     anothaOne();
     })
     };
-
     // Intern questions
     const promptIntern  = () =>{
         return inquirer.prompt(
@@ -131,8 +130,6 @@ const promptEngineer  = () =>{
         anothaOne();
         })
         };
-
-
 const teamAssembly = () => {
     console.log("DEV TEAM, ASSEEEEBLE!")
     fs.writeFileSync(outputPath, teamCards(assembleTeam))
