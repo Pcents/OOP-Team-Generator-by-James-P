@@ -6,6 +6,7 @@ const Intern = require('./lib/Intern')
 const teamCards = require('./src/cards')
 const path = require('path')
 const assembleTeam = [];
+const outputPath = './dist/index.html'
 console.log("we out here")
 
 const promptManager  = () =>{
@@ -131,10 +132,9 @@ const promptEngineer  = () =>{
         })
         };
 
-// how will i send this out to cards.js?
+
 const teamAssembly = () => {
     console.log("DEV TEAM, ASSEEEEBLE!")
     fs.writeFileSync(outputPath, teamCards(assembleTeam))
 }
 promptManager();
-
