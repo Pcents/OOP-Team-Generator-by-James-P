@@ -1,5 +1,4 @@
-// variebels that contain my template and a place for my template literals
-// have to link the email
+
 const manCards = (answers) => {
 return `<div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -7,10 +6,13 @@ return `<div class="card" style="width: 18rem;">
   <h5 class="card-title">Manager</h5>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID ${answers.id}</li>
-    <li class="list-group-item">Email ${answers.email}</li>
+    <li class="list-group-item">
+    <div class="card-link">Email <a href="mailto:${answers.email}">${answers.email}</a>
+    </div>
+    </li>
     <li class="list-group-item">Office Number ${answers.officeNumber}</li>
   </ul>
-  <a href="#" class="card-link">Card link</a>
+  
   </div>
 </div>`
 }
@@ -21,12 +23,16 @@ return `<div class="card" style="width: 18rem;">
     <h5 class="card-subtitle mb-2">${answers.name}</h5>
     <h5 class="card-title">Engineer</h5>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID ${answers.id}</li>
-      <li class="list-group-item">Email ${answers.email}</li>
-      <li class="list-group-item">GitHub Username ${answers.github}</li>
+      <li class="list-group-item">ID; ${answers.id}</li>
+      <li class="list-group-item">
+      <div class="card-link">Email <a href="mailto:${answers.email}">${answers.email}</a>
+      </div>
+      </li>
+      <li class="list-group-item">
+      <div class="card-link">Github: <a href="https://github.com/${answers.github}" target="_blank">${answers.github}</a>
+      </div>
+      </li>
     </ul>
-      <a href="#" class="card-link">Card link</a>
-  
     </div>
     </div>`
     
@@ -39,11 +45,12 @@ return `<div class="card" style="width: 18rem;">
         <h5 class="card-title">Intern</h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID ${answers.id}</li>
-          <li class="list-group-item">Email ${answers.email}</li>
+          <li class="list-group-item">
+          <div class="card-link">Email <a href="${answers.email}">${answers.email}</a>
+          </div>
+          </li>
           <li class="list-group-item">School ${answers.school}</li>
-        </ul>
-          <a href="#" class="card-link">Card link</a>
-        
+        </ul>      
         </div>
         </div>`
         
